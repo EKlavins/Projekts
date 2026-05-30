@@ -12,3 +12,4 @@ ruvector.db
 .claude-flow/logs/
 .claude-flow/sessions/
 .claude-flow/neural/
+personal-os/.claude-flow/
