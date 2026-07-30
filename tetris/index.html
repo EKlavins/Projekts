@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>Tetris Themes</title>
+<meta name="theme-color" content="#0f172a" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Tetris" />
+<meta name="mobile-web-app-capable" content="yes" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icons/icon.svg" />
+<link rel="stylesheet" href="src/styles/main.css" />
+<link rel="stylesheet" href="src/styles/themes.css" />
+</head>
+<body>
+<div id="app" class="theme-jungle">
+
+  <header class="topbar">
+    <button id="btn-menu" class="icon-btn" aria-label="Menu">☰</button>
+    <div class="brand">TETRIS</div>
+    <button id="btn-pause" class="icon-btn" aria-label="Pause">❚❚</button>
+  </header>
+
+  <main class="board-wrap">
+    <section class="side-panel left">
+      <div class="panel-box">
+        <span class="panel-label">HOLD</span>
+        <canvas id="hold-canvas" width="80" height="80"></canvas>
+      </div>
+      <div class="panel-box stats">
+        <span class="panel-label">SCORE</span>
+        <span id="score" class="panel-value">0</span>
+      </div>
+      <div class="panel-box stats">
+        <span class="panel-label">BEST</span>
+        <span id="best" class="panel-value">0</span>
+      </div>
+    </section>
+
+    <div class="board-frame">
+      <canvas id="board-canvas"></canvas>
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h2 id="overlay-title">Paused</h2>
+          <p id="overlay-sub"></p>
+          <button id="overlay-action" class="primary-btn">Resume</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="side-panel right">
+      <div class="panel-box">
+        <span class="panel-label">NEXT</span>
+        <canvas id="next-canvas" width="80" height="80"></canvas>
+      </div>
+      <div class="panel-box stats">
+        <span class="panel-label">LEVEL</span>
+        <span id="level" class="panel-value">1</span>
+      </div>
+      <div class="panel-box stats">
+        <span class="panel-label">LINES</span>
+        <span id="lines" class="panel-value">0</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="controls">
+    <div class="dpad">
+      <button id="btn-left" class="ctrl-btn wide" aria-label="Left">◀</button>
+      <button id="btn-down" class="ctrl-btn wide" aria-label="Soft drop">▼</button>
+      <button id="btn-right" class="ctrl-btn wide" aria-label="Right">▶</button>
+    </div>
+    <div class="actions">
+      <button id="btn-hold" class="ctrl-btn round" aria-label="Hold">HOLD</button>
+      <button id="btn-rotate" class="ctrl-btn round accent" aria-label="Rotate">⟳</button>
+      <button id="btn-drop" class="ctrl-btn round warn" aria-label="Hard drop">DROP</button>
+    </div>
+  </footer>
+
+  <div id="menu" class="menu hidden">
+    <div class="menu-card">
+      <h2>Themes</h2>
+      <div id="theme-grid" class="theme-grid"></div>
+      <button id="menu-close" class="primary-btn">Close</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="src/js/themes.js"></script>
+<script src="src/js/storage.js"></script>
+<script src="src/js/game.js"></script>
+<script src="src/js/input.js"></script>
+<script src="src/js/ui.js"></script>
+<script src="src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  memories      Memory[]
+  goals         Goal[]
+  journalEntries JournalEntry[]
+  portfolioItems PortfolioItem[]
+  incomeStreams  IncomeStream[]
+  businesses    Business[]
+  projects      Project[]
+  opportunities Opportunity[]
+  netWorthSnapshots NetWorthSnapshot[]
+}
+
+model Memory {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  key       String
+  value     String
+  category  String   // goals, preferences, lessons, decisions, projects, investments
+  tags      String   @default("[]") // JSON array
+  embedding String?  // JSON array of floats
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, category])
+}
+
+model Goal {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  title       String
+  description String?
+  category    String   // financial, business, automotive, personal, investment
+  status      String   @default("active") // active, completed, paused
+  targetDate  DateTime?
+  targetValue Float?
+  currentValue Float?
+  milestones  String   @default("[]") // JSON array
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model JournalEntry {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  title     String
+  content   String
+  mood      Int?     // 1-10
+  tags      String   @default("[]") // JSON array
+  insights  String?  // AI-generated insights
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PortfolioItem {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  ticker       String
+  name         String
+  type         String   // stock, etf, crypto, bond, cash
+  shares       Float
+  avgCost      Float
+  currentPrice Float    @default(0)
+  notes        String?
+  thesis       String?
+  addedAt      DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([userId, ticker])
+}
+
+model IncomeStream {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  name        String
+  type        String   // salary, business, freelance, investment, rental, other
+  monthlyAmount Float
+  status      String   @default("active")
+  startDate   DateTime?
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Business {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  name        String
+  description String?
+  stage       String   @default("idea") // idea, validating, launched, scaling, mature
+  monthlyRevenue Float @default(0)
+  monthlyProfit  Float @default(0)
+  metrics     String   @default("{}") // JSON
+  tasks       String   @default("[]") // JSON array
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  name        String
+  description String?
+  category    String   // automotive, personal, business, learning
+  status      String   @default("active")
+  budget      Float?
+  spent       Float    @default(0)
+  tasks       String   @default("[]") // JSON array
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Opportunity {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id])
+  title          String
+  description    String
+  category       String   // stock, business, income, crypto, real-estate, other
+  roiPotential   Int      // 1-10
+  riskLevel      Int      // 1-10
+  timeRequired   Int      // hours/week 1-10
+  capitalRequired Float?
+  scalability    Int      // 1-10
+  difficulty     Int      // 1-10
+  score          Int      // 1-100 overall opportunity score
+  status         String   @default("new") // new, researching, active, passed
+  notes          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model NetWorthSnapshot {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  totalAssets Float
+  totalLiabilities Float
+  netWorth    Float
+  breakdown   String   @default("{}") // JSON: {cash, investments, realEstate, vehicles, business}
+  date        DateTime @default(now())
+}
+
+model AgentMessage {
+  id        String   @id @default(cuid())
+  sessionId String
+  agentId   String
+  role      String   // user, assistant
+  content   String
+  createdAt DateTime @default(now())
+
+  @@index([sessionId])
+}
