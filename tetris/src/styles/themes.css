@@ -1,0 +1,53 @@
+#app.theme-jungle {
+  --accent: #4ade80;
+  --accent-glow: rgba(74, 222, 128, 0.35);
+  --bg-gradient: radial-gradient(circle at 20% 0%, #14532d 0%, #052e16 45%, #021a0d 100%);
+}
+
+#app.theme-city {
+  --accent: #60a5fa;
+  --accent-glow: rgba(96, 165, 250, 0.35);
+  --bg-gradient: linear-gradient(180deg, #0f172a 0%, #1e293b 55%, #0b1220 100%),
+    repeating-linear-gradient(90deg, rgba(96, 165, 250, 0.06) 0 2px, transparent 2px 40px);
+}
+
+#app.theme-space {
+  --accent: #818cf8;
+  --accent-glow: rgba(129, 140, 248, 0.4);
+  --bg-gradient: radial-gradient(1px 1px at 10% 20%, #fff 100%, transparent),
+    radial-gradient(1px 1px at 80% 40%, #fff 100%, transparent),
+    radial-gradient(1px 1px at 40% 80%, #fff 100%, transparent),
+    radial-gradient(1px 1px at 60% 10%, #fff 100%, transparent),
+    radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0b0620 60%, #000 100%);
+}
+
+#app.theme-ocean {
+  --accent: #22d3ee;
+  --accent-glow: rgba(34, 211, 238, 0.35);
+  --bg-gradient: radial-gradient(circle at 30% 0%, #0e7490 0%, #083344 50%, #041318 100%);
+}
+
+#app.theme-ice {
+  --accent: #0ea5e9;
+  --accent-glow: rgba(14, 165, 233, 0.35);
+  --bg-gradient: radial-gradient(circle at 30% 0%, #e0f2fe 0%, #7dd3fc 35%, #0c4a6e 100%);
+  color: #0f172a;
+}
+
+#app.theme-neon {
+  --accent: #f472b6;
+  --accent-glow: rgba(244, 114, 182, 0.45);
+  --bg-gradient: radial-gradient(circle at 20% 10%, #3b0764 0%, #1e1033 45%, #050109 100%);
+}
+
+#app.theme-desert {
+  --accent: #f59e0b;
+  --accent-glow: rgba(245, 158, 11, 0.35);
+  --bg-gradient: linear-gradient(180deg, #7c2d12 0%, #92400e 40%, #451a03 100%);
+}
+
+#app.theme-candy {
+  --accent: #f9a8d4;
+  --accent-glow: rgba(249, 168, 212, 0.4);
+  --bg-gradient: radial-gradient(circle at 30% 0%, #fbcfe8 0%, #c4b5fd 45%, #4c1d95 100%);
+}
