@@ -1,53 +1,120 @@
+/* Each theme sets an accent, a mood gradient, and a decorative watermark
+   (::before/::after) so themes read as distinct scenes, not just recolors. */
+
+#app::before,
+#app::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  line-height: 1;
+  font-size: 260px;
+  filter: blur(1px);
+}
+
+#app::before {
+  bottom: -60px;
+  left: -40px;
+  opacity: 0.16;
+  transform: rotate(-8deg);
+}
+
+#app::after {
+  top: -30px;
+  right: -50px;
+  font-size: 180px;
+  opacity: 0.12;
+  transform: rotate(10deg);
+}
+
+.topbar, .board-wrap, .controls, .menu { position: relative; z-index: 1; }
+
 #app.theme-jungle {
   --accent: #4ade80;
   --accent-glow: rgba(74, 222, 128, 0.35);
-  --bg-gradient: radial-gradient(circle at 20% 0%, #14532d 0%, #052e16 45%, #021a0d 100%);
+  --bg-gradient: radial-gradient(circle at 15% -10%, #1a7a3e 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, #0f5132 0%, transparent 40%),
+    repeating-linear-gradient(115deg, rgba(163, 230, 53, 0.05) 0 3px, transparent 3px 26px),
+    linear-gradient(160deg, #0b3d20 0%, #052e16 50%, #01130a 100%);
 }
+#app.theme-jungle::before { content: "🌴"; }
+#app.theme-jungle::after { content: "🦜"; }
 
 #app.theme-city {
   --accent: #60a5fa;
   --accent-glow: rgba(96, 165, 250, 0.35);
   --bg-gradient: linear-gradient(180deg, #0f172a 0%, #1e293b 55%, #0b1220 100%),
-    repeating-linear-gradient(90deg, rgba(96, 165, 250, 0.06) 0 2px, transparent 2px 40px);
+    repeating-linear-gradient(90deg, rgba(96, 165, 250, 0.08) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(180deg, rgba(250, 204, 21, 0.05) 0 40px, transparent 40px 80px);
 }
+#app.theme-city::before { content: "🏙️"; }
+#app.theme-city::after { content: "🌆"; }
 
 #app.theme-space {
   --accent: #818cf8;
   --accent-glow: rgba(129, 140, 248, 0.4);
-  --bg-gradient: radial-gradient(1px 1px at 10% 20%, #fff 100%, transparent),
-    radial-gradient(1px 1px at 80% 40%, #fff 100%, transparent),
-    radial-gradient(1px 1px at 40% 80%, #fff 100%, transparent),
-    radial-gradient(1px 1px at 60% 10%, #fff 100%, transparent),
+  --bg-gradient: radial-gradient(1.5px 1.5px at 10% 20%, #fff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 80% 40%, #fff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 40% 80%, #fff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 60% 10%, #fff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 25% 55%, #fff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 92% 75%, #fff 100%, transparent),
+    radial-gradient(circle at 50% 15%, #3730a3 0%, transparent 40%),
     radial-gradient(circle at 50% 20%, #1e1b4b 0%, #0b0620 60%, #000 100%);
 }
+#app.theme-space::before { content: "🪐"; }
+#app.theme-space::after { content: "🚀"; }
 
 #app.theme-ocean {
   --accent: #22d3ee;
   --accent-glow: rgba(34, 211, 238, 0.35);
-  --bg-gradient: radial-gradient(circle at 30% 0%, #0e7490 0%, #083344 50%, #041318 100%);
+  --bg-gradient: radial-gradient(circle at 30% 0%, #0891b2 0%, transparent 45%),
+    repeating-linear-gradient(200deg, rgba(103, 232, 249, 0.06) 0 3px, transparent 3px 30px),
+    linear-gradient(180deg, #075567 0%, #083344 55%, #021014 100%);
 }
+#app.theme-ocean::before { content: "🌊"; }
+#app.theme-ocean::after { content: "🐠"; }
 
 #app.theme-ice {
-  --accent: #0ea5e9;
-  --accent-glow: rgba(14, 165, 233, 0.35);
-  --bg-gradient: radial-gradient(circle at 30% 0%, #e0f2fe 0%, #7dd3fc 35%, #0c4a6e 100%);
+  --accent: #0369a1;
+  --accent-glow: rgba(3, 105, 161, 0.3);
+  --bg-gradient: radial-gradient(circle at 30% 0%, #f0f9ff 0%, transparent 45%),
+    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.15) 0 2px, transparent 2px 34px),
+    linear-gradient(160deg, #e0f2fe 0%, #7dd3fc 40%, #0c4a6e 100%);
   color: #0f172a;
 }
+#app.theme-ice::before { content: "❄️"; }
+#app.theme-ice::after { content: "🧊"; }
 
 #app.theme-neon {
   --accent: #f472b6;
   --accent-glow: rgba(244, 114, 182, 0.45);
-  --bg-gradient: radial-gradient(circle at 20% 10%, #3b0764 0%, #1e1033 45%, #050109 100%);
+  --bg-gradient: repeating-linear-gradient(90deg, rgba(244, 114, 182, 0.07) 0 1px, transparent 1px 44px),
+    repeating-linear-gradient(0deg, rgba(34, 211, 238, 0.06) 0 1px, transparent 1px 44px),
+    radial-gradient(circle at 20% 10%, #5b21b6 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, #1e1033 0%, transparent 50%),
+    linear-gradient(160deg, #2e1065 0%, #1e1033 45%, #050109 100%);
 }
+#app.theme-neon::before { content: "🌃"; }
+#app.theme-neon::after { content: "✨"; }
 
 #app.theme-desert {
   --accent: #f59e0b;
   --accent-glow: rgba(245, 158, 11, 0.35);
-  --bg-gradient: linear-gradient(180deg, #7c2d12 0%, #92400e 40%, #451a03 100%);
+  --bg-gradient: radial-gradient(circle at 75% 12%, #fbbf24 0%, transparent 18%),
+    linear-gradient(180deg, #c2571b 0%, #92400e 45%, #451a03 100%);
 }
+#app.theme-desert::before { content: "🏜️"; }
+#app.theme-desert::after { content: "☀️"; }
 
 #app.theme-candy {
-  --accent: #f9a8d4;
-  --accent-glow: rgba(249, 168, 212, 0.4);
-  --bg-gradient: radial-gradient(circle at 30% 0%, #fbcfe8 0%, #c4b5fd 45%, #4c1d95 100%);
+  --accent: #db2777;
+  --accent-glow: rgba(219, 39, 119, 0.35);
+  --bg-gradient: radial-gradient(circle at 20% 90%, rgba(255, 255, 255, 0.25) 0 6px, transparent 7px),
+    radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.2) 0 8px, transparent 9px),
+    radial-gradient(circle at 85% 65%, rgba(255, 255, 255, 0.2) 0 5px, transparent 6px),
+    radial-gradient(circle at 30% 0%, #fbcfe8 0%, transparent 45%),
+    linear-gradient(160deg, #a78bfa 0%, #7c3aed 50%, #4c1d95 100%);
 }
+#app.theme-candy::before { content: "🍬"; }
+#app.theme-candy::after { content: "🍭"; }

@@ -131,11 +131,40 @@ class TetrisUI {
   }
 
   _drawCell(ctx, px, py, size, color) {
+    const pad = size * 0.06;
+    const x = px + pad;
+    const y = py + pad;
+    const w = size - pad * 2;
+    const h = size - pad * 2;
+    const r = size * 0.16;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+    ctx.clip();
+
+    const grad = ctx.createLinearGradient(x, y, x + w, y + h);
+    grad.addColorStop(0, "rgba(255,255,255,0.55)");
+    grad.addColorStop(0.18, color);
+    grad.addColorStop(1, "rgba(0,0,0,0.35)");
     ctx.fillStyle = color;
-    ctx.fillRect(px, py, size, size);
-    ctx.strokeStyle = "rgba(255,255,255,0.25)";
-    ctx.lineWidth = Math.max(1, size * 0.06);
-    ctx.strokeRect(px + 1, py + 1, size - 2, size - 2);
+    ctx.fillRect(x, y, w, h);
+    ctx.fillStyle = grad;
+    ctx.fillRect(x, y, w, h);
+
+    ctx.fillStyle = "rgba(255,255,255,0.4)";
+    ctx.fillRect(x, y, w, h * 0.22);
+
+    ctx.restore();
+
+    ctx.strokeStyle = "rgba(0,0,0,0.3)";
+    ctx.lineWidth = Math.max(1, size * 0.04);
+    ctx.strokeRect(x, y, w, h);
   }
 
   _drawMini(ctx, type) {
