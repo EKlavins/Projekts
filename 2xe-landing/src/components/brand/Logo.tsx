@@ -16,15 +16,25 @@ import { cn } from "@/lib/utils";
  */
 
 /**
- * Left glyph — angular "2", built as four overlapping bars: top bar, a short
- * vertical descender under its right end, a wide diagonal sweep, then the
- * bottom bar. The descender is what stops the shape reading as a "Z".
+ * Left glyph: the numeral "2" taken from Archivo Black (900), the same family
+ * the page sets its headings in.
  *
- * Chosen by 2XE from eight candidates — the wide, shallow diagonal gives the
- * numeral more speed than a long upright stem would.
+ * Every hand-drawn attempt read as a "Z", because a bar-and-diagonal
+ * construction has a corner where a "2" needs a bowl. Rather than keep
+ * approximating one, this is the real glyph outline, scaled so its cap height
+ * matches the 80-unit box the other two letters occupy. Archivo is licensed
+ * under the SIL Open Font License, which permits this use.
+ *
+ * Width 66.5; it overshoots the cap line by 0.8 top and bottom, as round
+ * glyphs are drawn to, so it is positioned by that overshoot rather than by
+ * its bounding box.
  */
 const GLYPH_2 =
-  "M8 0H70V22H0V8Z M48 22H70V36H48Z M48 34H70L18 64H0V58Z M0 58H70V72L62 80H0Z";
+  "M66.47 81.63L0 81.63L0 76.03Q0 71.14 2.10 66.76Q4.20 62.39 7.76 58.48Q11.31 54.58 15.63 51.02Q19.94 47.46 24.49 44.08Q29.15 40.58 33.24 37.67Q37.32 34.75 39.88 31.72Q42.45 28.69 42.45 24.96Q42.45 22.74 41.40 20.82Q40.35 18.89 38.19 17.67Q36.03 16.44 32.42 16.44Q28.80 16.44 26.30 17.84Q23.79 19.24 22.45 21.75Q21.11 24.26 21.11 27.41L21.11 29.74L0.35 29.74Q0.23 29.04 0.23 28.40Q0.23 27.76 0.23 27.17Q0.23 18.89 4.02 12.83Q7.81 6.76 15.45 3.38Q23.09 0 34.64 0Q41.75 0 47.46 1.69Q53.18 3.38 57.20 6.59Q61.22 9.80 63.38 14.23Q65.54 18.66 65.54 24.14Q65.54 29.50 63.56 33.82Q61.57 38.13 57.96 41.87Q54.34 45.60 49.68 49.10Q45.01 52.59 39.53 56.21Q36.73 58.08 34.99 59.30Q33.24 60.52 32.42 61.11Q31.60 61.69 31.37 61.92L66.47 61.92";
+
+/** Advance width of GLYPH_2 and the overshoot above the cap line. */
+const GLYPH_2_WIDTH = 66.5;
+const GLYPH_2_OVERSHOOT = 0.8;
 
 /** Centre glyph — "X" as two crossing parallelogram strokes. */
 const GLYPH_X = "M0 0H24L76 80H52ZM52 0H76L24 80H0Z";
@@ -37,7 +47,21 @@ const GLYPH_E = "M8 0H64V22H24V30H56V50H24V58H64V72L56 80H0V8Z";
  * very slightly outward rather than running dead straight — that convexity is
  * what stops it reading as a plain slash.
  */
-const BLADE = "M245 12 Q157.4 95.4 55 160 Q142.6 76.6 245 12 Z";
+const BLADE = "M200 8 Q157.5 91.8 95 162 Q137.5 78.2 200 8 Z";
+
+/*
+ * Letter positions, centred in the 300-unit viewBox with a 6-unit gap before
+ * the X and 12 after it. They are not equal because the X's diagonal arms
+ * recede optically where the 2's flat foot and the E's flat spine do not.
+ */
+const LETTER_TOP = 45;
+const GLYPH_X_WIDTH = 76;
+const GAP_BEFORE_X = 6;
+const GAP_AFTER_X = 12;
+
+const TWO_LEFT = 37.75;
+const X_LEFT = TWO_LEFT + GLYPH_2_WIDTH + GAP_BEFORE_X;
+const E_LEFT = X_LEFT + GLYPH_X_WIDTH + GAP_AFTER_X;
 
 export type LogoVariant = "steel" | "mono" | "arc";
 
@@ -120,9 +144,16 @@ export function Logo({ className, variant = "steel", title }: LogoProps) {
           strokeLinejoin="round"
           paintOrder="stroke fill"
         >
-          <path d={GLYPH_2} transform="translate(33 45)" fillRule="nonzero" />
-          <path d={GLYPH_X} transform="translate(115 45)" fillRule="nonzero" />
-          <path d={GLYPH_E} transform="translate(203 45)" />
+          <path
+            d={GLYPH_2}
+            transform={`translate(${TWO_LEFT} ${LETTER_TOP - GLYPH_2_OVERSHOOT})`}
+          />
+          <path
+            d={GLYPH_X}
+            transform={`translate(${X_LEFT} ${LETTER_TOP})`}
+            fillRule="nonzero"
+          />
+          <path d={GLYPH_E} transform={`translate(${E_LEFT} ${LETTER_TOP})`} />
         </g>
       </g>
 
@@ -146,7 +177,7 @@ export function LogoMark({ className, variant = "steel", title }: LogoProps) {
   const maskId = `mark-blade-cut-${variant}`;
   const fill = variant === "steel" ? "#e8ebef" : "currentColor";
   const outline = variant === "steel" ? "#07090b" : "none";
-  const blade = "M88 6 Q54 54 12 96 Q46 48 88 6 Z";
+  const blade = "M78 2 Q54 52 26 98 Q46 50 78 2 Z";
 
   return (
     <svg
