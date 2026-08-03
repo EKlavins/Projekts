@@ -3,10 +3,10 @@ import type { Dictionary } from "./types";
 export const en: Dictionary = {
   meta: {
     htmlLang: "en",
-    title: "2XE — Plastic & metal part manufacturing, 3D printing and scanning in Riga",
+    title: "2XE: plastic and metal part manufacturing, 3D printing and scanning in Riga",
     description:
       "Full-cycle technical 3D printing, part design, 3D scanning and restoration. Plastic and metal, print temperatures up to 390 °C. Based in Riga, shipping across Latvia and Europe.",
-    ogAlt: "2XE — technical 3D printing and part manufacturing",
+    ogAlt: "2XE: technical 3D printing and part manufacturing",
   },
 
   nav: {
@@ -29,12 +29,12 @@ export const en: Dictionary = {
     titleLead: "From an idea to a",
     titleAccent: "finished part",
     subtitle:
-      "Full-cycle technical 3D printing, part design and 3D scanning. We manufacture plastic and metal parts — from a sketch on paper or a broken original through to a finished product.",
+      "Full-cycle technical 3D printing, part design and 3D scanning. We manufacture plastic and metal parts, from a sketch on paper or a broken original through to a finished product.",
     primaryCta: "Request a quote",
     secondaryCta: "See materials",
     specs: [
       { value: "up to 390 °C", label: "Print temperature" },
-      { value: "0.2 – 0.8 mm", label: "Nozzle range" },
+      { value: "0.2-0.8 mm", label: "Nozzle range" },
       { value: "STL · STEP · IGES", label: "File formats" },
     ],
     figureAlt:
@@ -83,12 +83,12 @@ export const en: Dictionary = {
     eyebrow: "Services",
     heading: "The whole route from concept to the part in your hand",
     subtitle:
-      "It doesn't matter which stage you're at — an idea in your head or a finished drawing. We pick the project up wherever it is.",
+      "It doesn't matter which stage you're at: an idea in your head or a finished drawing. We pick the project up wherever it is.",
     items: [
       {
         icon: "cycle",
         title: "Full-cycle development",
-        body: "We take on any concept — whether you have only an idea, rough dimensions, a sketch on paper or a finished technical drawing.",
+        body: "We take on any concept, whether you have only an idea, rough dimensions, a sketch on paper or a finished technical drawing.",
       },
       {
         icon: "scan",
@@ -98,7 +98,7 @@ export const en: Dictionary = {
       {
         icon: "restore",
         title: "Restoration & replacement",
-        body: "We restore broken, worn or discontinued plastic and metal parts — including ones the original manufacturer no longer sells.",
+        body: "We restore broken, worn or discontinued plastic and metal parts, including ones the original manufacturer no longer sells.",
       },
       {
         icon: "assembly",
@@ -113,7 +113,7 @@ export const en: Dictionary = {
       {
         icon: "tune",
         title: "Model optimisation",
-        body: "We prepare and improve the model before printing — wall thickness and infill are tuned to the real loads, not to default slicer settings.",
+        body: "We prepare and improve the model before printing. Wall thickness and infill are tuned to the real loads, not to default slicer settings.",
       },
     ],
   },
@@ -126,7 +126,7 @@ export const en: Dictionary = {
     items: [
       {
         title: "Industrial temperature, not hobby grade",
-        body: "A print temperature of up to 390 °C means PEEK, PEI and carbon-fibre composites — materials a standard printer physically cannot process.",
+        body: "A print temperature of up to 390 °C means PEEK, PEI and carbon-fibre composites that a standard printer physically cannot process.",
       },
       {
         title: "No file? No problem",
@@ -134,7 +134,7 @@ export const en: Dictionary = {
       },
       {
         title: "Engineered for load, not for the printer",
-        body: "Wall thickness, infill and layer orientation are matched to the real loads and operating conditions — never left on a default profile.",
+        body: "Wall thickness, infill and layer orientation are matched to the real loads and operating conditions, never left on a default profile.",
       },
       {
         title: "Plastic and metal under one roof",
@@ -147,7 +147,7 @@ export const en: Dictionary = {
     eyebrow: "Work",
     heading: "Real projects from our bench",
     subtitle:
-      "Each of these models started from an existing part, a sketch or a set of dimensions — and ended as a finished part ready to fit.",
+      "Each of these models started from an existing part, a sketch or a set of dimensions and ended as a finished part ready to fit.",
     items: {
       "vent-insert": {
         title: "Louvred vent insert",
@@ -169,7 +169,7 @@ export const en: Dictionary = {
       },
       "cad-session": {
         title: "Surface modelling in CAD",
-        body: "Every part is built from surfaces and checked before printing — not simply carved out of a file someone sent over.",
+        body: "Every part is built from surfaces and checked before printing, not simply carved out of a file someone sent over.",
         tags: ["CAD", "Preparation"],
         alt: "CAD application view showing a part's surface model and its feature tree",
       },
@@ -190,7 +190,7 @@ export const en: Dictionary = {
       {
         name: "Engineering plastics",
         tags: ["ABS", "ASA", "Nylon (PA)", "PC"],
-        body: "UV and temperature resistant parts for vehicle exteriors and interiors. Polyamide and polycarbonate are exceptionally impact resistant — ideal for plain bearings and gears.",
+        body: "UV and temperature resistant parts for vehicle exteriors and interiors. Polyamide and polycarbonate are exceptionally impact resistant, which makes them ideal for plain bearings and gears.",
       },
       {
         name: "Composites & high temperature",
@@ -239,7 +239,7 @@ export const en: Dictionary = {
     eyebrow: "Technical capabilities",
     heading: "The numbers you can plan your project around",
     subtitle:
-      "No promises — just the technical parameters we work to every day.",
+      "No promises, just the technical parameters we work to every day.",
     specs: [
       {
         label: "Print temperature",
@@ -248,7 +248,7 @@ export const en: Dictionary = {
       },
       {
         label: "Nozzle range",
-        value: "0.2 – 0.8 mm",
+        value: "0.2-0.8 mm",
         body: "0.2 mm for maximum detail, 0.8 mm for speed and for massive, high-strength parts.",
       },
       {
@@ -277,7 +277,7 @@ export const en: Dictionary = {
   cta: {
     heading: "Send us the part, the sketch, or just the idea",
     subtitle:
-      "We'll assess what's possible and tell you how to make it — free of charge and with no obligation.",
+      "We'll assess what's possible and tell you how to make it. Free of charge and with no obligation.",
     primary: "Send an email",
     secondary: "Call us",
     note: "We reply within 24 hours on business days.",

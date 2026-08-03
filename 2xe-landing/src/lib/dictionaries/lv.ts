@@ -3,10 +3,10 @@ import type { Dictionary } from "./types";
 export const lv: Dictionary = {
   meta: {
     htmlLang: "lv",
-    title: "2XE — Plastmasas un metāla detaļu izgatavošana, 3D druka un skenēšana Rīgā",
+    title: "2XE: plastmasas un metāla detaļu izgatavošana, 3D druka un skenēšana Rīgā",
     description:
       "Pilna cikla tehniskā 3D druka, detaļu projektēšana, 3D skenēšana un restaurācija. Plastmasa un metāls, drukas temperatūra līdz 390 °C. Rīga, piegāde visā Latvijā un Eiropā.",
-    ogAlt: "2XE — tehniskā 3D druka un detaļu izgatavošana",
+    ogAlt: "2XE: tehniskā 3D druka un detaļu izgatavošana",
   },
 
   nav: {
@@ -29,12 +29,12 @@ export const lv: Dictionary = {
     titleLead: "No idejas līdz",
     titleAccent: "gatavai detaļai",
     subtitle:
-      "Pilna cikla tehniskā 3D druka, detaļu projektēšana un 3D skenēšana. Izgatavojam plastmasas un metāla detaļas — no skices uz papīra vai salauztas oriģināldetaļas līdz gatavam produktam.",
+      "Pilna cikla tehniskā 3D druka, detaļu projektēšana un 3D skenēšana. Izgatavojam plastmasas un metāla detaļas no skices uz papīra vai salauztas oriģināldetaļas līdz gatavam produktam.",
     primaryCta: "Saņemt piedāvājumu",
     secondaryCta: "Apskatīt materiālus",
     specs: [
       { value: "līdz 390 °C", label: "Drukas temperatūra" },
-      { value: "0.2 – 0.8 mm", label: "Sprauslu diapazons" },
+      { value: "0,2-0,8 mm", label: "Sprauslu diapazons" },
       { value: "STL · STEP · IGES", label: "Failu formāti" },
     ],
     /** Alt text for the decorative technical illustration. */
@@ -84,12 +84,12 @@ export const lv: Dictionary = {
     eyebrow: "Pakalpojumi",
     heading: "Viss ceļš no ieceres līdz detaļai jūsu rokās",
     subtitle:
-      "Nav svarīgi, kurā posmā jūs atrodaties — ar ideju galvā vai ar gatavu rasējumu. Pārņemam projektu no tās vietas, kur tas ir.",
+      "Nav svarīgi, kurā posmā jūs atrodaties: ar ideju galvā vai ar gatavu rasējumu. Pārņemam projektu no tās vietas, kur tas ir.",
     items: [
       {
         icon: "cycle",
         title: "Pilna cikla izstrāde",
-        body: "Realizējam jebkuru ieceri — neatkarīgi no tā, vai jums ir tikai ideja, aptuveni izmēri, skice uz papīra vai gatavs rasējums.",
+        body: "Realizējam jebkuru ieceri neatkarīgi no tā, vai jums ir tikai ideja, aptuveni izmēri, skice uz papīra vai gatavs rasējums.",
       },
       {
         icon: "scan",
@@ -99,7 +99,7 @@ export const lv: Dictionary = {
       {
         icon: "restore",
         title: "Restaurācija un aizvietošana",
-        body: "Atjaunojam salauztas, nodilušas vai no ražošanas izņemtas plastmasas un metāla detaļas — arī tad, ja oriģināls vairs nav nopērkams.",
+        body: "Atjaunojam salauztas, nodilušas vai no ražošanas izņemtas plastmasas un metāla detaļas arī tad, ja oriģināls vairs nav nopērkams.",
       },
       {
         icon: "assembly",
@@ -114,7 +114,7 @@ export const lv: Dictionary = {
       {
         icon: "tune",
         title: "Modeļa optimizācija",
-        body: "Sagatavojam un uzlabojam modeli pirms drukas — sienu biezumu un pildījumu pielāgojam reālajām slodzēm, nevis noklusējuma iestatījumiem.",
+        body: "Sagatavojam un uzlabojam modeli pirms drukas. Sienu biezumu un pildījumu pielāgojam reālajām slodzēm, nevis noklusējuma iestatījumiem.",
       },
     ],
   },
@@ -127,10 +127,10 @@ export const lv: Dictionary = {
     items: [
       {
         title: "Industriāla temperatūra, ne hobija līmenis",
-        body: "Drukas temperatūra līdz 390 °C nozīmē PEEK, PEI un oglekļa šķiedras kompozītus — materiālus, kurus standarta printeris fiziski nespēj apstrādāt.",
+        body: "Drukas temperatūra līdz 390 °C nozīmē PEEK, PEI un oglekļa šķiedras kompozītus, ko standarta printeris fiziski nespēj apstrādāt.",
       },
       {
-        title: "Nav faila — nav problēmu",
+        title: "Nav faila? Nav problēmu",
         body: "Ieskenēsim esošo detaļu vai uzmodelēsim no nulles pēc skices, foto vai izmēriem. Jums nav jābūt inženierim.",
       },
       {
@@ -148,29 +148,29 @@ export const lv: Dictionary = {
     eyebrow: "Darbi",
     heading: "Reāli projekti no mūsu darbgalda",
     subtitle:
-      "Katrs no šiem modeļiem sākās ar esošu detaļu, skici vai izmēriem — un beidzās ar gatavu, uzstādāmu detaļu.",
+      "Katrs no šiem modeļiem sākās ar esošu detaļu, skici vai izmēriem un beidzās ar gatavu, uzstādāmu detaļu.",
     items: {
       "vent-insert": {
         title: "Ventilācijas restes ieliktnis",
-        body: "Oriģinālā detaļa ieskenēta, un uz skenējuma virsmas uzmodelētas jaunas žalūzijas — jaunā detaļa precīzi atkārto oriģinālo formu.",
+        body: "Oriģinālā detaļa ieskenēta, un uz skenējuma virsmas uzmodelētas jaunas žalūzijas, tāpēc jaunā detaļa precīzi atkārto oriģinālo formu.",
         tags: ["3D skenēšana", "Virsmu modelēšana"],
         alt: "Ventilācijas restes ieliktņa 3D modelis ar skenētu ārējo virsmu un modelētām žalūzijām",
       },
       "duct-elbow": {
         title: "Mitsubishi Lancer Evolution VI gaisa kanāls",
-        body: "Oriģinālā detaļa ieskenēta, un pēc skenējuma modelis uzzīmēts no jauna — tā iegūstam precīzu, ražošanai gatavu gaisa kanālu.",
+        body: "Oriģinālā detaļa ieskenēta, un pēc skenējuma modelis uzzīmēts no jauna, tā iegūstot precīzu, ražošanai gatavu gaisa kanālu.",
         tags: ["3D skenēšana", "Auto detaļa"],
         alt: "Mitsubishi Lancer Evolution VI gaisa kanāla 3D modelis, uzzīmēts pēc oriģinālās detaļas skenējuma",
       },
       "surface-model": {
         title: "Rekonstrukcija pēc skenējuma",
-        body: "Modelis būvēts tieši uz skenējuma, izmantojot atskaites plaknes un šķērsgriezumus — tā jaunā detaļa saderas ar esošo mezglu.",
+        body: "Modelis būvēts tieši uz skenējuma, izmantojot atskaites plaknes un šķērsgriezumus, tāpēc jaunā detaļa saderas ar esošo mezglu.",
         tags: ["Rekonstrukcija", "3D skenēšana"],
         alt: "Detaļas 3D modelis ar atskaites plaknēm un šķērsgriezuma skicēm",
       },
       "cad-session": {
         title: "Virsmu modelēšana CAD vidē",
-        body: "Katra detaļa tiek uzbūvēta no virsmām un pārbaudīta pirms drukas — nevis vienkārši izgriezta no gatava faila.",
+        body: "Katra detaļa tiek uzbūvēta no virsmām un pārbaudīta pirms drukas, nevis vienkārši izgriezta no gatava faila.",
         tags: ["CAD", "Sagatavošana"],
         alt: "CAD programmas darba skats ar detaļas virsmu modeli un elementu koku",
       },
@@ -191,7 +191,7 @@ export const lv: Dictionary = {
       {
         name: "Inženiertehniskās plastmasas",
         tags: ["ABS", "ASA", "Nylon (PA)", "PC"],
-        body: "UV un temperatūras izturīgas detaļas auto eksterjeram un interjeram. Poliamīds un polikarbonāts — īpaši triecienizturīgi slīdgultņiem un zobratiem.",
+        body: "UV un temperatūras izturīgas detaļas auto eksterjeram un interjeram. Poliamīds un polikarbonāts ir īpaši triecienizturīgi, tāpēc noder slīdgultņiem un zobratiem.",
       },
       {
         name: "Kompozīti un augstas temperatūras",
@@ -223,11 +223,11 @@ export const lv: Dictionary = {
       },
       {
         title: "Modelis vai skenēšana",
-        body: "Ja faila nav — ieskenējam esošo detaļu vai uzmodelējam no nulles. Strādājam ar STL, OBJ, STEP, IGES un citiem formātiem.",
+        body: "Ja faila nav, ieskenējam esošo detaļu vai uzmodelējam no nulles. Strādājam ar STL, OBJ, STEP, IGES un citiem formātiem.",
       },
       {
         title: "Ražošana",
-        body: "Izvēlamies materiālu un drukas parametrus atbilstoši slodzēm. Ja nepieciešams — izgatavojam metālā.",
+        body: "Izvēlamies materiālu un drukas parametrus atbilstoši slodzēm. Ja nepieciešams, izgatavojam metālā.",
       },
       {
         title: "Piegāde",
@@ -240,7 +240,7 @@ export const lv: Dictionary = {
     eyebrow: "Tehniskās iespējas",
     heading: "Skaitļi, pēc kuriem varat plānot projektu",
     subtitle:
-      "Nekādu solījumu — tikai tehniskie parametri, ar kuriem strādājam katru dienu.",
+      "Nekādu solījumu, tikai tehniskie parametri, ar kuriem strādājam katru dienu.",
     specs: [
       {
         label: "Drukas temperatūra",
@@ -249,13 +249,13 @@ export const lv: Dictionary = {
       },
       {
         label: "Sprauslu diapazons",
-        value: "0.2 – 0.8 mm",
+        value: "0,2-0,8 mm",
         body: "0.2 mm maksimālai detalizācijai, 0.8 mm ātrumam un masīvām, izturīgām detaļām.",
       },
       {
         label: "Failu formāti",
         value: "STL · OBJ · STEP · IGES",
-        body: "Strādājam arī ar citiem formātiem. Ja faila nav — ieskenēsim vai uztaisīsim no nulles.",
+        body: "Strādājam arī ar citiem formātiem. Ja faila nav, ieskenēsim vai uztaisīsim no nulles.",
       },
       {
         label: "Materiālu klāsts",
@@ -278,7 +278,7 @@ export const lv: Dictionary = {
   cta: {
     heading: "Atsūtiet detaļu, skici vai vienkārši ideju",
     subtitle:
-      "Novērtēsim iespējas un pateiksim, kā to izgatavot — bez maksas un bez saistībām.",
+      "Novērtēsim iespējas un pateiksim, kā to izgatavot. Bez maksas un bez saistībām.",
     primary: "Rakstīt e-pastu",
     secondary: "Zvanīt",
     note: "Atbildam darba dienās 24 stundu laikā.",
