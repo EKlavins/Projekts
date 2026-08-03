@@ -10,8 +10,14 @@
  */
 export const site = {
   name: "2XE",
-  /** Used for canonical URLs, sitemap, hreflang and Open Graph. */
-  url: "https://2xe.lv",
+  /**
+   * Used for canonical URLs, sitemap, hreflang and Open Graph.
+   *
+   * Overridable so preview deployments announce their own address. Without
+   * this every preview build emits canonical="https://2xe.lv", telling
+   * crawlers the staging copy *is* production.
+   */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://2xe.lv",
   founded: "2021",
 
   contact: {
