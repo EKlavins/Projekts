@@ -156,10 +156,10 @@ export const en: Dictionary = {
         alt: "3D model of a louvred vent insert with a scanned outer surface and modelled louvres",
       },
       "duct-elbow": {
-        title: "Curved duct assembly with flange",
-        body: "A complex three-dimensional form built surface by surface, so the flange and the duct axis hold their exact relative position.",
-        tags: ["Surface modelling", "Assemblies"],
-        alt: "3D model of a curved duct part with a flange and coloured surface regions",
+        title: "Mitsubishi Lancer Evolution VI air duct",
+        body: "The original part was 3D scanned and the model redrawn from that scan, giving a precise, production-ready air duct.",
+        tags: ["3D scanning", "Automotive part"],
+        alt: "3D model of a Mitsubishi Lancer Evolution VI air duct, redrawn from a scan of the original part",
       },
       "surface-model": {
         title: "Reconstruction from a scan",

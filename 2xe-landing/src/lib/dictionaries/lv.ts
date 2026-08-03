@@ -157,10 +157,10 @@ export const lv: Dictionary = {
         alt: "Ventilācijas restes ieliktņa 3D modelis ar skenētu ārējo virsmu un modelētām žalūzijām",
       },
       "duct-elbow": {
-        title: "Liekts kanāla mezgls ar atloku",
-        body: "Sarežģītas telpiskas formas detaļa, modelēta pa virsmām, lai atloks un kanāla ass saglabātu precīzu savstarpējo novietojumu.",
-        tags: ["Virsmu modelēšana", "Mezgli"],
-        alt: "Liekta kanāla detaļas 3D modelis ar atloku un krāsotām virsmu zonām",
+        title: "Mitsubishi Lancer Evolution VI gaisa kanāls",
+        body: "Oriģinālā detaļa ieskenēta, un pēc skenējuma modelis uzzīmēts no jauna — tā iegūstam precīzu, ražošanai gatavu gaisa kanālu.",
+        tags: ["3D skenēšana", "Auto detaļa"],
+        alt: "Mitsubishi Lancer Evolution VI gaisa kanāla 3D modelis, uzzīmēts pēc oriģinālās detaļas skenējuma",
       },
       "surface-model": {
         title: "Rekonstrukcija pēc skenējuma",
