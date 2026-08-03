@@ -16,13 +16,15 @@ import { cn } from "@/lib/utils";
  */
 
 /**
- * Left glyph — angular "2", built as four overlapping bars so it keeps a
- * short vertical descender under the top bar. Without that descender the
- * shape collapses into a "Z".
- * Order: top bar, descender, diagonal sweep, bottom bar.
+ * Left glyph — angular "2", built as four overlapping bars: top bar, a short
+ * vertical descender under its right end, a wide diagonal sweep, then the
+ * bottom bar. The descender is what stops the shape reading as a "Z".
+ *
+ * Chosen by 2XE from eight candidates — the wide, shallow diagonal gives the
+ * numeral more speed than a long upright stem would.
  */
 const GLYPH_2 =
-  "M8 0H70V24H0V8Z M46 24H70V38H46Z M46 36H70L24 60H0Z M0 56H70V72L62 80H0Z";
+  "M8 0H70V22H0V8Z M48 22H70V36H48Z M48 34H70L18 64H0V58Z M0 58H70V72L62 80H0Z";
 
 /** Centre glyph — "X" as two crossing parallelogram strokes. */
 const GLYPH_X = "M0 0H24L76 80H52ZM52 0H76L24 80H0Z";
