@@ -47,15 +47,17 @@ export function Counter({
     ).matches;
     if (reduced || typeof IntersectionObserver === "undefined") return;
 
-    // Drop to zero so the count-up has somewhere to travel from; the
-    // server-rendered value stays in the HTML for crawlers.
-    el.textContent = format(0);
-
     let frame = 0;
     const observer = new IntersectionObserver(
       (entries) => {
         if (!entries.some((entry) => entry.isIntersecting)) return;
         observer.disconnect();
+
+        // Reset to zero only once the number is actually on screen, and start
+        // the animation in the same tick. Zeroing on mount instead left every
+        // stat below the fold reading "0 °C" / "0,0 mm" until it was scrolled
+        // to, which reads as broken rather than as a pending animation.
+        el.textContent = format(0);
 
         const start = performance.now();
         const tick = (now: number) => {

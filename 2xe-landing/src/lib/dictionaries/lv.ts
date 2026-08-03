@@ -12,6 +12,7 @@ export const lv: Dictionary = {
   nav: {
     label: "Galvenā navigācija",
     services: "Pakalpojumi",
+    work: "Darbi",
     materials: "Materiāli",
     process: "Process",
     capabilities: "Iespējas",
@@ -59,7 +60,7 @@ export const lv: Dictionary = {
         note: "Ļauj strādāt ar PEEK un PEI",
       },
       {
-        numeric: 13,
+        numeric: 14,
         suffix: "",
         label: "Materiālu veidi",
         note: "No PLA līdz oglekļa šķiedrai un metālam",
@@ -141,6 +142,39 @@ export const lv: Dictionary = {
         body: "Viens 3D modelis, divi ražošanas ceļi. Ja plastmasa neiztur, tā pati detaļa nonāk metālā bez atkārtotas projektēšanas.",
       },
     ],
+  },
+
+  work: {
+    eyebrow: "Darbi",
+    heading: "Reāli projekti no mūsu darbgalda",
+    subtitle:
+      "Katrs no šiem modeļiem sākās ar esošu detaļu, skici vai izmēriem — un beidzās ar gatavu, uzstādāmu detaļu.",
+    items: {
+      "vent-insert": {
+        title: "Ventilācijas restes ieliktnis",
+        body: "Oriģinālā detaļa ieskenēta, un uz skenējuma virsmas uzmodelētas jaunas žalūzijas — jaunā detaļa precīzi atkārto oriģinālo formu.",
+        tags: ["3D skenēšana", "Virsmu modelēšana"],
+        alt: "Ventilācijas restes ieliktņa 3D modelis ar skenētu ārējo virsmu un modelētām žalūzijām",
+      },
+      "duct-elbow": {
+        title: "Liekts kanāla mezgls ar atloku",
+        body: "Sarežģītas telpiskas formas detaļa, modelēta pa virsmām, lai atloks un kanāla ass saglabātu precīzu savstarpējo novietojumu.",
+        tags: ["Virsmu modelēšana", "Mezgli"],
+        alt: "Liekta kanāla detaļas 3D modelis ar atloku un krāsotām virsmu zonām",
+      },
+      "surface-model": {
+        title: "Rekonstrukcija pēc skenējuma",
+        body: "Modelis būvēts tieši uz skenējuma, izmantojot atskaites plaknes un šķērsgriezumus — tā jaunā detaļa saderas ar esošo mezglu.",
+        tags: ["Rekonstrukcija", "3D skenēšana"],
+        alt: "Detaļas 3D modelis ar atskaites plaknēm un šķērsgriezuma skicēm",
+      },
+      "cad-session": {
+        title: "Virsmu modelēšana CAD vidē",
+        body: "Katra detaļa tiek uzbūvēta no virsmām un pārbaudīta pirms drukas — nevis vienkārši izgriezta no gatava faila.",
+        tags: ["CAD", "Sagatavošana"],
+        alt: "CAD programmas darba skats ar detaļas virsmu modeli un elementu koku",
+      },
+    },
   },
 
   materials: {
@@ -225,7 +259,7 @@ export const lv: Dictionary = {
       },
       {
         label: "Materiālu klāsts",
-        value: "13 veidi",
+        value: "14 veidi",
         body: "No PLA un PETG līdz PEEK, PEI, oglekļa šķiedras kompozītiem un metālam.",
       },
       {

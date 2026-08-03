@@ -12,6 +12,7 @@ export const en: Dictionary = {
   nav: {
     label: "Main navigation",
     services: "Services",
+    work: "Work",
     materials: "Materials",
     process: "Process",
     capabilities: "Capabilities",
@@ -58,7 +59,7 @@ export const en: Dictionary = {
         note: "Puts PEEK and PEI within reach",
       },
       {
-        numeric: 13,
+        numeric: 14,
         suffix: "",
         label: "Material types",
         note: "From PLA to carbon fibre and metal",
@@ -140,6 +141,39 @@ export const en: Dictionary = {
         body: "One 3D model, two production routes. If plastic won't hold, the same part goes to metal without a redesign.",
       },
     ],
+  },
+
+  work: {
+    eyebrow: "Work",
+    heading: "Real projects from our bench",
+    subtitle:
+      "Each of these models started from an existing part, a sketch or a set of dimensions — and ended as a finished part ready to fit.",
+    items: {
+      "vent-insert": {
+        title: "Louvred vent insert",
+        body: "The original part was scanned and new louvres modelled straight onto the scanned surface, so the replacement follows the original form exactly.",
+        tags: ["3D scanning", "Surface modelling"],
+        alt: "3D model of a louvred vent insert with a scanned outer surface and modelled louvres",
+      },
+      "duct-elbow": {
+        title: "Curved duct assembly with flange",
+        body: "A complex three-dimensional form built surface by surface, so the flange and the duct axis hold their exact relative position.",
+        tags: ["Surface modelling", "Assemblies"],
+        alt: "3D model of a curved duct part with a flange and coloured surface regions",
+      },
+      "surface-model": {
+        title: "Reconstruction from a scan",
+        body: "The model is built directly on the scan using reference planes and cross-sections, so the new part mates with the existing assembly.",
+        tags: ["Reconstruction", "3D scanning"],
+        alt: "3D model of a part shown with reference planes and cross-section sketches",
+      },
+      "cad-session": {
+        title: "Surface modelling in CAD",
+        body: "Every part is built from surfaces and checked before printing — not simply carved out of a file someone sent over.",
+        tags: ["CAD", "Preparation"],
+        alt: "CAD application view showing a part's surface model and its feature tree",
+      },
+    },
   },
 
   materials: {
@@ -224,7 +258,7 @@ export const en: Dictionary = {
       },
       {
         label: "Material range",
-        value: "13 types",
+        value: "14 types",
         body: "From PLA and PETG through to PEEK, PEI, carbon-fibre composites and metal.",
       },
       {

@@ -1,4 +1,4 @@
-import { LogoMark } from "@/components/brand/Logo";
+import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
@@ -20,7 +20,7 @@ export function CallToAction({ dict }: { dict: Dictionary }) {
           />
 
           <div className="relative mx-auto flex max-w-2xl flex-col items-center">
-            <LogoMark className="h-11 w-auto opacity-90" />
+            <Logo className="h-12 w-auto sm:h-14" title="2XE" />
 
             <h2 className="mt-8 text-3xl leading-[1.12] sm:text-4xl lg:text-5xl">
               {dict.cta.heading}

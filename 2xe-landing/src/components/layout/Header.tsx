@@ -22,6 +22,7 @@ export function Header({ locale, dict }: HeaderProps) {
 
   const links = [
     { href: "#services", label: dict.nav.services },
+    { href: "#work", label: dict.nav.work },
     { href: "#materials", label: dict.nav.materials },
     { href: "#process", label: dict.nav.process },
     { href: "#capabilities", label: dict.nav.capabilities },

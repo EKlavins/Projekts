@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { Services } from "@/components/sections/Services";
+import { Work } from "@/components/sections/Work";
 import { Why } from "@/components/sections/Why";
 import { Materials } from "@/components/sections/Materials";
 import { Process } from "@/components/sections/Process";
@@ -26,6 +27,7 @@ export default async function LandingPage({
       <Hero dict={dict} />
       <TrustBar dict={dict} locale={locale} />
       <Services dict={dict} />
+      <Work dict={dict} />
       <Why dict={dict} />
       <Materials dict={dict} />
       <Process dict={dict} />

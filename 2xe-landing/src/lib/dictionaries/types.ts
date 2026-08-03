@@ -1,4 +1,5 @@
 import type { IconName } from "@/components/ui/Icon";
+import type { WorkId } from "@/lib/work";
 
 /**
  * The contract every locale must satisfy. Adding a field here is a compile
@@ -46,6 +47,14 @@ export interface MaterialGroup {
   featured?: boolean;
 }
 
+/** Captions for one gallery entry; the image itself lives in lib/work.ts. */
+export interface WorkCopy {
+  title: string;
+  body: string;
+  tags: string[];
+  alt: string;
+}
+
 export interface SpecCard {
   label: string;
   value: string;
@@ -62,6 +71,7 @@ export interface Dictionary {
   nav: {
     label: string;
     services: string;
+    work: string;
     materials: string;
     process: string;
     capabilities: string;
@@ -98,6 +108,13 @@ export interface Dictionary {
     heading: string;
     subtitle: string;
     items: TextItem[];
+  };
+  work: {
+    eyebrow: string;
+    heading: string;
+    subtitle: string;
+    /** Every WorkId must be captioned, in every language. */
+    items: Record<WorkId, WorkCopy>;
   };
   materials: {
     eyebrow: string;
