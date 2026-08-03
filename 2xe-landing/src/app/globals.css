@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   2XE DESIGN SYSTEM
+   Derived from the 2XE mark: brushed steel on graphite, electric blue
+   backlight, 45-degree machined chamfers instead of rounded corners.
+   ========================================================================== */
+
+@theme {
+  /* --- Graphite: the machined ground ------------------------------------ */
+  --color-graphite-950: #0a0c0f;
+  --color-graphite-900: #0e1114;
+  --color-graphite-850: #14181d;
+  --color-graphite-800: #1a1f25;
+  --color-graphite-700: #242a31;
+  --color-graphite-600: #333a43;
+  --color-graphite-500: #454d57;
+
+  /* --- Steel: the mark and the type ------------------------------------- */
+  --color-steel-100: #eef1f4;
+  --color-steel-200: #c9ced5;
+  --color-steel-300: #a5acb5;
+  --color-steel-400: #8a9199;
+  --color-steel-500: #6c737c;
+
+  /* --- Arc: the single accent, taken from the backlit signage ----------- */
+  --color-arc-300: #a3c7ff;
+  --color-arc-400: #6ba5ff;
+  --color-arc-500: #3b7bff;
+  --color-arc-600: #1e4fd9;
+  --color-arc-700: #163ba6;
+
+  /* --- Typography ------------------------------------------------------- */
+  --font-display: var(--font-archivo), "Archivo", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace,
+    "SFMono-Regular", monospace;
+
+  /* --- Motion ----------------------------------------------------------- */
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-pulse-arc: pulse-arc 4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-arc {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+@layer base {
+  * {
+    border-color: var(--color-graphite-700);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky header never covers a heading. */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-graphite-900);
+    color: var(--color-steel-200);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-steel-100);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* A single, consistent focus treatment for every interactive element. */
+  :focus-visible {
+    outline: 2px solid var(--color-arc-400);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  ::selection {
+    background-color: var(--color-arc-600);
+    color: #fff;
+  }
+}
+
+/* ==========================================================================
+   CHAMFERS — the logo's 45-degree cut, reused as the UI's corner language.
+   Cuts the top-left and bottom-right corners, mirroring the wordmark.
+   ========================================================================== */
+
+@layer components {
+  .chamfer-sm {
+    clip-path: polygon(
+      6px 0,
+      100% 0,
+      100% calc(100% - 6px),
+      calc(100% - 6px) 100%,
+      0 100%,
+      0 6px
+    );
+  }
+
+  .chamfer-md {
+    clip-path: polygon(
+      12px 0,
+      100% 0,
+      100% calc(100% - 12px),
+      calc(100% - 12px) 100%,
+      0 100%,
+      0 12px
+    );
+  }
+
+  .chamfer-lg {
+    clip-path: polygon(
+      22px 0,
+      100% 0,
+      100% calc(100% - 22px),
+      calc(100% - 22px) 100%,
+      0 100%,
+      0 22px
+    );
+  }
+
+  /* Technical blueprint grid used behind the hero and the closing CTA. */
+  .grid-blueprint {
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in oklab, var(--color-graphite-600) 45%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--color-graphite-600) 45%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 64px 64px;
+  }
+
+  /*
+    Scroll-reveal. The hidden state is gated behind `.js` (set by an inline
+    script before first paint), so content is never hidden from visitors
+    without JavaScript or from crawlers that don't run it.
+  */
+  [data-reveal] {
+    transition:
+      opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .js [data-reveal]:not([data-shown="true"]) {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  /* Brushed-steel gradient for large display type. */
+  .text-steel {
+    background-image: linear-gradient(
+      160deg,
+      #ffffff 0%,
+      var(--color-steel-200) 38%,
+      var(--color-steel-400) 62%,
+      var(--color-steel-100) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* ==========================================================================
+   MOTION PREFERENCES — every animation in the system opts out here.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  /* Scroll-reveal must never leave content invisible when motion is off. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
