@@ -25,7 +25,7 @@ export const en: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Riga, Latvia · Shipping across Latvia and Europe",
+    eyebrow: "Shipping across Latvia and Europe",
     titleLead: "From an idea to a",
     titleAccent: "finished part",
     subtitle:

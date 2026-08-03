@@ -10,7 +10,7 @@ interface FooterProps {
 }
 
 const footerLinkClass =
-  "inline-flex text-sm text-steel-400 transition-colors hover:text-arc-400";
+  "inline-flex min-h-8 items-center text-sm text-steel-400 transition-colors hover:text-arc-400";
 
 export function Footer({ locale, dict }: FooterProps) {
   const year = new Date().getFullYear();
@@ -27,7 +27,7 @@ export function Footer({ locale, dict }: FooterProps) {
         <div className="grid gap-12 py-16 sm:py-20 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-5">
-            <Logo className="h-10 w-auto" title="2XE" />
+            <Logo className="h-13 w-auto" title="2XE" />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-steel-400">
               {dict.footer.tagline}
             </p>
@@ -42,7 +42,7 @@ export function Footer({ locale, dict }: FooterProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="chamfer-sm flex h-10 w-10 items-center justify-center border border-graphite-700 text-steel-400 transition-colors hover:border-arc-500 hover:text-arc-400"
+                    className="chamfer-sm flex h-11 w-11 items-center justify-center border border-graphite-700 text-steel-400 transition-colors hover:border-arc-500 hover:text-arc-400"
                   >
                     <Icon name={social.icon as IconName} size={18} />
                   </a>

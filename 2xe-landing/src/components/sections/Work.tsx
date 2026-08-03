@@ -65,7 +65,7 @@ export function Work({ dict }: { dict: Dictionary }) {
                       {copy.tags.map((tag) => (
                         <li
                           key={tag}
-                          className="chamfer-sm border border-graphite-700 bg-graphite-900 px-2.5 py-1 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-arc-400"
+                          className="chamfer-sm border border-graphite-700 bg-graphite-900 px-2.5 py-1 font-mono text-xs uppercase tracking-[0.12em] text-arc-400 sm:text-[0.7rem]"
                         >
                           {tag}
                         </li>

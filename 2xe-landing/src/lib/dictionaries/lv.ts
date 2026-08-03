@@ -25,7 +25,7 @@ export const lv: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Rīga · Piegāde visā Latvijā un Eiropā",
+    eyebrow: "Piegāde visā Latvijā un Eiropā",
     titleLead: "No idejas līdz",
     titleAccent: "gatavai detaļai",
     subtitle:

@@ -33,7 +33,7 @@ export function Materials({ dict }: { dict: Dictionary }) {
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <h3 className="text-xl font-semibold">{group.name}</h3>
                   {group.featured ? (
-                    <span className="chamfer-sm shrink-0 bg-arc-600 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-white">
+                    <span className="chamfer-sm shrink-0 bg-arc-600 px-2.5 py-1 font-mono text-xs uppercase tracking-[0.14em] text-white sm:text-[0.65rem]">
                       {dict.materials.featuredBadge}
                     </span>
                   ) : null}

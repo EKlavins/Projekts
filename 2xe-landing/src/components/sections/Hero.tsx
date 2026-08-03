@@ -23,10 +23,10 @@ export function Hero({ dict }: { dict: Dictionary }) {
         <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-6 xl:col-span-6">
             <Reveal>
-              <p className="chamfer-sm inline-flex items-center gap-2 border border-graphite-700 bg-graphite-850/60 px-3.5 py-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-steel-300 backdrop-blur-sm">
+              <p className="chamfer-sm inline-flex items-start gap-2 border border-graphite-700 bg-graphite-850/60 px-3.5 py-2 font-mono text-xs uppercase tracking-[0.14em] text-steel-300 backdrop-blur-sm sm:tracking-[0.18em] sm:text-[0.7rem]">
                 <span
                   aria-hidden="true"
-                  className="inline-block h-1.5 w-1.5 bg-arc-400 animate-pulse-arc"
+                  className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 self-start bg-arc-400 animate-pulse-arc"
                 />
                 {dict.hero.eyebrow}
               </p>
@@ -39,7 +39,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
                   className="pointer-events-none absolute -inset-x-8 -inset-y-6 bg-arc-500/18 blur-2xl"
                 />
                 <Logo
-                  className="relative h-11 w-auto sm:h-14"
+                  className="relative h-15 w-auto sm:h-18"
                   title="2XE"
                 />
               </div>
@@ -78,7 +78,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
                     key={spec.label}
                     className="flex flex-col justify-between gap-1.5 bg-graphite-900 px-5 py-4"
                   >
-                    <dt className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-steel-400">
+                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-steel-400 sm:text-[0.7rem]">
                       {spec.label}
                     </dt>
                     <dd className="font-display text-lg font-semibold text-steel-100">

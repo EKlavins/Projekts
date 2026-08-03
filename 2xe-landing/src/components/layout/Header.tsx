@@ -82,10 +82,10 @@ export function Header({ locale, dict }: HeaderProps) {
         <div className="flex h-18 items-center justify-between gap-6 py-3 sm:h-20">
           <Link
             href={`/${locale}`}
-            className="shrink-0 transition-opacity hover:opacity-80"
+            className="flex min-h-11 shrink-0 items-center transition-opacity hover:opacity-80"
             aria-label="2XE"
           >
-            <Logo className="h-8 w-auto sm:h-9" title="2XE" />
+            <Logo className="h-11 w-auto sm:h-12" title="2XE" />
           </Link>
 
           <nav aria-label={dict.nav.label} className="hidden lg:block">
@@ -108,7 +108,7 @@ export function Header({ locale, dict }: HeaderProps) {
               href={`/${target}`}
               hrefLang={target}
               aria-label={dict.nav.switchLanguage}
-              className="chamfer-sm flex h-10 items-center gap-1.5 border border-graphite-700 px-3 font-mono text-xs font-medium tracking-wider text-steel-300 transition-colors hover:border-arc-500 hover:text-steel-100"
+              className="chamfer-sm flex h-11 items-center gap-1.5 border border-graphite-700 px-3 font-mono text-xs font-medium tracking-wider text-steel-300 transition-colors hover:border-arc-500 hover:text-steel-100"
             >
               <Icon name="globe" size={15} aria-hidden="true" />
               {localeLabels[target]}
@@ -128,7 +128,7 @@ export function Header({ locale, dict }: HeaderProps) {
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
               aria-label={menuOpen ? dict.nav.closeMenu : dict.nav.openMenu}
-              className="chamfer-sm flex h-10 w-10 items-center justify-center border border-graphite-700 text-steel-200 transition-colors hover:border-arc-500 lg:hidden"
+              className="chamfer-sm flex h-11 w-11 items-center justify-center border border-graphite-700 text-steel-200 transition-colors hover:border-arc-500 lg:hidden"
             >
               <Icon name={menuOpen ? "close" : "menu"} size={20} />
             </button>

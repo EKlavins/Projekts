@@ -20,7 +20,7 @@ export function CallToAction({ dict }: { dict: Dictionary }) {
           />
 
           <div className="relative mx-auto flex max-w-2xl flex-col items-center">
-            <Logo className="h-12 w-auto sm:h-14" title="2XE" />
+            <Logo className="h-16 w-auto sm:h-18" title="2XE" />
 
             <h2 className="mt-8 text-3xl leading-[1.12] sm:text-4xl lg:text-5xl">
               {dict.cta.heading}
